@@ -74,6 +74,7 @@ def bankOperations():
         bankOperations()
 
     elif(selectedOption == 4):
+        print("Thank you for banking with us!")
         exit()
     else:
         print('Invalid Option selected, please try again')
