@@ -127,8 +127,12 @@ def manageBudget():
         option2 = transferDic[input("To: ")]
         print("You'd be transferring from Budget", transferDic[option1], "to", transferDic[option2], "budget balance")
         amount = int(input("How much would you like to transfer? \n $"))
-        database_user[name][2].transferDic[option1] = database_user[name][2].[option1] - amount
-        database_user[name][2].transferDic[option2] = database_user[name][2].[option2] + amount
+        
+        amount1 = getattr(database_user[name][2], option['1'])
+        setattr(database_user[name][2], option['1'], amount1 - amount)
+        
+        amount2 = getattr(database_user[name][2], option['2'])
+        setattr(database_user[name][2], option['2'], amount2 + amount)
         manageBudget()
     
     elif selectedOption == 4:
